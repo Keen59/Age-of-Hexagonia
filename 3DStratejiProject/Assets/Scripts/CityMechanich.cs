@@ -59,7 +59,17 @@ public class CityMechanich : MonoBehaviour
         loadingbar.GetComponent<Image>().fillAmount=0;
         cancelButton.GetComponent<Button>().interactable=false;
     }
-    
+    public void upgradeSwordsman()
+    {
+        if (gameObject.GetComponent<Envantory>().envantory.warriorTier<5&&gameObject.GetComponent<Envantory>().envantory.warriorTier*200<=gameObject.GetComponent<Envantory>().envantory.wood&&gameObject.GetComponent<Envantory>().envantory.warriorTier*200<=gameObject.GetComponent<Envantory>().envantory.food)
+        {
+            gameObject.GetComponent<Envantory>().envantory.wood-=gameObject.GetComponent<Envantory>().envantory.warriorTier*200;
+gameObject.GetComponent<Envantory>().envantory.food-=gameObject.GetComponent<Envantory>().envantory.warriorTier*200;
+            gameObject.GetComponent<Envantory>().envantory.warriorTier++;
+
+
+        }
+    }
     public void Create_current(float Speed,string ObjectName)
     {
        
